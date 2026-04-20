@@ -1075,18 +1075,29 @@ p  { line-height: 1.75; }
     font-size: 15px;
   }
   .dropdown {
-    position: static;
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
     box-shadow: none;
     border: none;
     background: var(--bg-light);
     border-radius: var(--r-sm);
-    padding: 6px 8px;
-    margin: 4px 0 8px;
+    padding: 4px 0;
+    margin: 2px 0 8px 0;
+    min-width: 0;
+    width: 100%;
     display: none;
   }
+  .dropdown a {
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: var(--r-sm);
+  }
+  .nav-links li.open > a svg { transform: rotate(180deg); }
   .nav-links li.open .dropdown { display: block; }
   .nav-cta { margin-left: 0; margin-top: 12px; align-self: flex-start; }
   .hamburger { display: flex; }
