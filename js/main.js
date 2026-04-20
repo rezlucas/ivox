@@ -289,6 +289,42 @@
     });
   }
 
+  /* ── Tabs + Slides ────────────────────────────────────── */
+  function initTabsSlides() {
+    const sections = document.querySelectorAll('.tabs-slides-section');
+    sections.forEach(section => {
+      const tabs   = section.querySelectorAll('.ts-tab');
+      const panels = section.querySelectorAll('.ts-panel');
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          panels.forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          panels[i].classList.add('active');
+        });
+      });
+
+      panels.forEach(panel => {
+        const slides  = panel.querySelectorAll('.ts-slide');
+        const counter = panel.querySelector('.ts-counter');
+        const prev    = panel.querySelector('.ts-arrow.prev');
+        const next    = panel.querySelector('.ts-arrow.next');
+        let cur = 0;
+
+        function go(n) {
+          cur = (n + slides.length) % slides.length;
+          slides.forEach((s, i) => s.classList.toggle('active', i === cur));
+          if (counter) counter.textContent = `${cur + 1}/${slides.length}`;
+        }
+
+        if (prev) prev.addEventListener('click', () => go(cur - 1));
+        if (next) next.addEventListener('click', () => go(cur + 1));
+        go(0);
+      });
+    });
+  }
+
   /* ── Bootstrap ────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
     injectComponents();
@@ -299,6 +335,7 @@
     initCounters();
     initTestimonials();
     initFAQ();
+    initTabsSlides();
   });
 
 })();
