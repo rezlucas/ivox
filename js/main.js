@@ -185,7 +185,7 @@
     const prefix = raw.match(/^[^0-9]*/)[0];
     const suffix = raw.match(/[^0-9]*$/)[0];
     const num = parseFloat(raw.replace(/[^0-9.]/g, ''));
-    if (isNaN(num)) return;
+    if (isNaN(num) || raw.includes('/')) return;
 
     const duration = 1800;
     const start = performance.now();
