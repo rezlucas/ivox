@@ -348,6 +348,11 @@ p  { line-height: 1.75; }
     linear-gradient(to right, rgba(10,37,64,0.82) 0%, rgba(10,37,64,0.55) 55%, rgba(10,37,64,0.25) 100%),
     linear-gradient(to top, rgba(10,37,64,0.5) 0%, transparent 60%);
 }
+@media (max-width: 768px) {
+  .hero-video-overlay {
+    background: rgba(10,37,64,0.72);
+  }
+}
 .hero .container { position: relative; z-index: 2; }
 .hero-content {
   max-width: 600px;
