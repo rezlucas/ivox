@@ -265,19 +265,21 @@ p  { line-height: 1.75; }
 }
 .dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(8px);
+  transform: translateX(-50%) translateY(4px);
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   padding: 8px;
+  padding-top: 16px;
   min-width: 240px;
   box-shadow: var(--shadow-lg);
   opacity: 0;
   pointer-events: none;
-  transition: all 0.25s var(--ease);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
   z-index: 100;
+  margin-top: -8px;
 }
 .nav-links li:hover .dropdown {
   opacity: 1;
