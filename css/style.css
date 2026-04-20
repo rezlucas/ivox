@@ -618,6 +618,26 @@ p  { line-height: 1.75; }
 }
 .checkpoints { margin-top: 0; }
 
+@media (max-width: 768px) {
+  .service-photo-box {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--r-lg);
+  }
+  .service-photo-box img {
+    height: 220px;
+    flex-shrink: 0;
+    object-position: top center;
+  }
+  .service-photo-checks {
+    position: static;
+    background: linear-gradient(135deg, var(--navy), var(--blue-dark));
+    border-radius: 0 0 var(--r-lg) var(--r-lg);
+    padding: 20px 20px 24px;
+  }
+}
+
 /* ── Equipe Split Section ─────────────────────────────────── */
 .equipe-layout {
   display: grid;
