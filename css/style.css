@@ -128,8 +128,10 @@ p  { line-height: 1.75; }
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-2--fixed { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid-3--fixed { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-@media (max-width: 640px) { .grid-2--fixed { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .grid-3--fixed { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid-2--fixed { grid-template-columns: 1fr; } .grid-3--fixed { grid-template-columns: 1fr; } }
 
 /* ── Buttons ──────────────────────────────────────────────── */
 .btn {
