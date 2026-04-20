@@ -585,35 +585,69 @@ p  { line-height: 1.75; }
 .service-intro-text p strong { color: var(--text); }
 .service-intro-text .btn { margin-top: 10px; }
 .service-intro-visual {
-  background: linear-gradient(135deg, var(--navy), var(--blue-dark));
-  border-radius: var(--r-lg);
-  padding: 40px;
-  color: var(--white);
-  position: relative;
+  border-radius: var(--r-xl);
   overflow: hidden;
+  position: relative;
 }
-.service-intro-visual::before {
-  content: '';
+.service-photo-box {
+  position: relative;
+  height: clamp(380px, 46vw, 520px);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.service-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.service-photo-checks {
   position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(0,180,192,0.25), transparent);
-  border-radius: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10,37,64,0.97) 30%, rgba(10,37,64,0.78) 100%);
+  backdrop-filter: blur(4px);
+  padding: 24px 28px 28px;
 }
-.service-intro-visual::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  left: -30px;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle, rgba(147,196,98,0.15), transparent);
-  border-radius: 50%;
+.service-photo-checks h4 {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
-.service-intro-visual .inner { position: relative; z-index: 1; }
-.checkpoints { margin-top: 20px; }
+.checkpoints { margin-top: 0; }
+
+/* ── Equipe Split Section ─────────────────────────────────── */
+.equipe-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .equipe-layout { grid-template-columns: 1fr; }
+  .equipe-layout--reverse .equipe-img { order: 0; }
+}
+.equipe-layout--reverse .equipe-img { order: 2; }
+.equipe-layout--reverse .equipe-text { order: 1; }
+.equipe-img {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  height: clamp(320px, 40vw, 480px);
+  box-shadow: var(--shadow-lg);
+}
+.equipe-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.equipe-img:hover img { transform: scale(1.03); }
+.equipe-text h2 { margin-bottom: 20px; }
+.equipe-text p { color: var(--text-mid); margin-bottom: 16px; }
+.equipe-text p strong { color: var(--text); }
+.equipe-text .btn { margin-top: 12px; }
 .checkpoint {
   display: flex;
   align-items: flex-start;
