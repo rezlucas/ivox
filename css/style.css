@@ -350,7 +350,7 @@ p  { line-height: 1.75; }
 }
 @media (max-width: 768px) {
   .hero-video-overlay {
-    background: rgba(10,37,64,0.72);
+    background: rgba(10,37,64,0.82);
   }
 }
 .hero .container { position: relative; z-index: 2; }
